@@ -4,8 +4,8 @@ import Navbar from "./components/Navbar";
 import Textform from "./components/Textform";
 import React, { useState } from "react";
 import Alert from "./components/Alert";
-import About from "./components/About";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import About from "./components/About";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [mode, setmode] = useState("dark");
@@ -43,32 +43,32 @@ function App() {
 
   return (
     <>
-      <Router>
-        <Navbar
-          title="TextUtils"
-          mode={mode}
-          togglemode={togglemode}
-          onblue={onblue}
-          ongreen={ongreen}
-          onred={onred}
-        />
-        <Alert alert={alert} />
+      {/* <Router> */}
+      <Navbar
+        title="TextUtils"
+        mode={mode}
+        togglemode={togglemode}
+        onblue={onblue}
+        ongreen={ongreen}
+        onred={onred}
+      />
+      <Alert alert={alert} />
 
-        <div className="container my-3">
-          <Switch>
+      <div className="container my-3">
+        {/* <Switch>
             <Route path="/about">
               <About />
             </Route>
-            <Route path="/">
-              <Textform
-                heading="Enter the text to analyze"
-                mode={mode}
-                showalert={showalert}
-              />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+            <Route path="/"> */}
+        <Textform
+          heading="Enter the text to analyze"
+          mode={mode}
+          showalert={showalert}
+        />
+        {/* </Route>
+          </Switch> */}
+      </div>
+      {/* </Router> */}
     </>
   );
 }
