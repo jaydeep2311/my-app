@@ -43,32 +43,29 @@ function App() {
 
   return (
     <>
-      {/* <Router> */}
-      <Navbar
-        title="TextUtils"
-        mode={mode}
-        togglemode={togglemode}
-        onblue={onblue}
-        ongreen={ongreen}
-        onred={onred}
-      />
-      <Alert alert={alert} />
-
-      <div className="container my-3">
-        {/* <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/"> */}
-        <Textform
-          heading="Enter the text to analyze"
+      <Router>
+        <Navbar
+          title="TextUtils"
           mode={mode}
-          showalert={showalert}
+          togglemode={togglemode}
+          onblue={onblue}
+          ongreen={ongreen}
+          onred={onred}
         />
-        {/* </Route>
-          </Switch> */}
-      </div>
-      {/* </Router> */}
+        <Alert alert={alert} />
+
+        <div className="container my-3">
+          <Switch>
+            <Route path="/">
+              <Textform
+                heading="Enter the text to analyze"
+                mode={mode}
+                showalert={showalert}
+              />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </>
   );
 }
